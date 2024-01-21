@@ -43,3 +43,6 @@ def nine_day_response_humidity(nine_day_response, date_to_forecast):
     # Verify the humidity values
     assert max_rel_humidity >= 0, f"Maximum relative humidity value must be numbers. Current value: {max_rel_humidity}"
     assert min_rel_humidity >= 0, f"Minimum relative humidity value must be numbers. Current value: {min_rel_humidity}"
+
+    # Print the forecast date and the forecast value
+    print(f"\nForecast date: {date_to_forecast}\nMaximum relative humidity: {max_rel_humidity}\nMinimum relative humidity: {min_rel_humidity}")
