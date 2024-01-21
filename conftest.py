@@ -1,9 +1,41 @@
 import pytest
-from datetime import datetime, timedelta
 import pytz
+import selenium.webdriver
+from datetime import datetime, timedelta
+from pages.markets import ExchangeMarketsPage
+from pages.pair import TradePairPage
 
+# Settings for command line options
 def pytest_addoption(parser):
-    parser.addoption("--days", action="store", default=2, type=int, help="Number of days for testing")
+    parser.addoption("--days", action="store", default=2, type=int, help="Number of days from now for api testing")
+
+#-----------------------------------------------------------------------------------------------------------------#
+# Fixtures for Crypto.com Exchange UI test (exchange.feature, test_exchange.py)
+
+# Create browser instance
+@pytest.fixture
+def browser():
+    b = selenium.webdriver.Chrome()
+    # The default browser size is desktop
+    b.set_window_size(1200, 891)
+    yield b
+    b.quit()
+
+
+# Create Markets page instance using the browser instance
+@pytest.fixture
+def markets_page(browser):
+    return ExchangeMarketsPage(browser)
+
+
+# Create Pair page instance using the browser instance
+@pytest.fixture
+def pair_page(browser):
+    return TradePairPage(browser)
+
+
+#-----------------------------------------------------------------------------------------------------------------#
+# Fixtures for Hong Kong Observatory API test (weather.feature, test_weather.py)
 
 @pytest.fixture
 def date_to_forecast(request):

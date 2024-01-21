@@ -17,7 +17,7 @@ def nine_day_response_code(nine_day_response):
     assert status == 200, f"Unexpected status code: {status}"
 
 
-# Date to forecast is returned from conftest.py with default value is 2 days from now
+# Date to forecast is returned from conftest.py with default value of 2 days from now
 @then("the response contains maximum and minimum relative humidity for '2 days' from now")
 def nine_day_response_humidity(nine_day_response, date_to_forecast):
     # Get 9-day forecast response data
