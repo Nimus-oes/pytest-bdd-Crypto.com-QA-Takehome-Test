@@ -1,5 +1,5 @@
 @exchange
-Feature: Crypto.com Exchange ZIL/USDT Trade Pair Page
+Feature: Crypto.com Exchange Page Navigation
   As a Crypto.com Exchange user,
   I want to navgiate to the spot trading page of 'ZIL/USDT'
   So I can check the pair data and proceed with the trading

@@ -1,5 +1,5 @@
 @weather
-Feature: Hong Kong Observatory 9-day weather forecast API
+Feature: HKO Weather Forecast API
   As a test automation engineer,
   I want to automate the api test for 9-day weather forecast of Hong Kong Observatory
   So I can make sure I get the forecast information anytime, anywhere.
